@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pré-Projeto: Teste Vocacional Interativo</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 12mm 15mm;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+            line-height: 1.35;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+        }
+        .header-box {
+            border: 1.5px solid #005a36;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            background-color: #f7fbf8;
+        }
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .header-table td {
+            vertical-align: middle;
+            padding: 1px 4px;
+        }
+        .inst-title {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #005a36;
+            margin: 0;
+        }
+        .course-title {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #222;
+            margin: 1px 0;
+        }
+        .header-right {
+            font-size: 9pt;
+            text-align: right;
+            border-left: 1px solid #c2dfd1;
+            padding-left: 10px;
+        }
+        h1 {
+            font-size: 13pt;
+            color: #005a36;
+            border-bottom: 1.5px solid #005a36;
+            padding-bottom: 3px;
+            margin: 0 0 10px 0;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        h2 {
+            font-size: 10.5pt;
+            color: #005a36;
+            border-bottom: 1px solid #d0e4d9;
+            padding-bottom: 2px;
+            margin: 8px 0 4px 0;
+            text-transform: uppercase;
+        }
+        p {
+            margin: 3px 0;
+            text-align: justify;
+        }
+        ul {
+            margin: 3px 0 6px 18px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 3px;
+            text-align: justify;
+        }
+        code {
+            font-family: Consolas, "Courier New", monospace;
+            background-color: #eef2f0;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 9.5pt;
+            color: #902000;
+            font-weight: bold;
+        }
+        .footer-note {
+            margin-top: 10px;
+            font-size: 8pt;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 4px;
+        }
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <table class="header-table">
+            <tr>
+                <td style="width: 63%;">
+                    <div class="inst-title">SATC - EDUCAÇÃO E TECNOLOGIA</div>
+                    <div class="course-title">Curso: Inteligência Artificial (Noturno - 2ª Fase)</div>
+                    <div style="font-size: 9pt;"><strong>Componente Curricular:</strong> Programação I | <strong>Professor:</strong> Evandro Luiz Martignago</div>
+                </td>
+                <td style="width: 37%;" class="header-right">
+                    <div><strong>Prazo:</strong> 13/11/2026 às 22:00</div>
+                    <div><strong>Avaliação:</strong> Pré-projeto (Peso: 2.0)</div>
+                    <div><strong>Forma de Entrega:</strong> Documento .pdf</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h1>Pré-Projeto: Teste Vocacional Interativo</h1>
+
+    <h2>1. Integrantes do Grupo</h2>
+    <ul style="margin-bottom: 4px;">
+        <li>Ana Carolina</li>
+        <li>Daniela</li>
+    </ul>
+
+    <h2>2. Descrição / Apresentação do Sistema</h2>
+    <p>
+        O sistema consiste em uma ferramenta de Teste Vocacional Interativo desenvolvida em Python. Seu objetivo é auxiliar estudantes e profissionais na descoberta de áreas de atuação que se alinham ao seu perfil pessoal e preferências.
+    </p>
+    <p>
+        O programa interage com o usuário por meio de perguntas direcionadas a quatro grandes áreas do conhecimento: Tecnologia, Saúde, Humanas e Negócios. Ao final do questionário, o sistema contabiliza os pontos de forma dinâmica, identifica a área com maior afinidade e exibe uma lista personalizada de profissões sugeridas para aquela carreira. O sistema foi projetado para rodar continuamente em um terminal, permitindo que múltiplos testes sejam realizados na mesma sessão sem perder o estado atual da execução.
+    </p>
+
+    <h2>3. Principais Funções do Projeto a Ser Implementado</h2>
+    <p style="margin-bottom: 4px;">
+        Para cumprir as regras e os controles de fluxo exigidos, o código-fonte foi estruturado nas seguintes funções principais:
+    </p>
+    <ul>
+        <li><strong><code>menu()</code>:</strong> Gerencia a interface interativa principal utilizando um laço de repetição <code>while</code>. Apresenta as opções de realizar o teste ou encerrar o programa usando estruturas condicionais de escolha (<code>match/case</code>).</li>
+        <li><strong><code>questionario()</code>:</strong> Limpa as pontuações anteriores e executa a sequência de perguntas dinâmicas para o usuário, mapeando as respostas para suas respectivas áreas.</li>
+        <li><strong><code>fazer_pergunta(pergunta, area, pontos)</code>:</strong> Automatiza a captura de respostas em formato Sim/Não (S/N). Possui um mecanismo de validação com <code>while</code> e <code>if/elif</code> que impede entradas inválidas e soma os pontos diretamente no dicionário global de áreas.</li>
+        <li><strong><code>mostrar_resultado()</code>:</strong> Processa os dados armazenados temporariamente, calcula o valor máximo de pontuação para determinar a área recomendada e percorre as listas de carreiras utilizando o laço <code>for</code> para exibir os resultados na tela.</li>
+    </ul>
+
+    <div class="footer-note">
+        Pré-Projeto Acadêmico - Disciplina de Programação I | SATC 2026.2
+    </div>
+
+</body>
+</html>
