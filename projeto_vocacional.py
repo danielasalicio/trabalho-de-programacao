@@ -1,3 +1,4 @@
+
 areas = {
     "Tecnologia": 0,
     "Saúde": 0,
@@ -43,11 +44,19 @@ def questionario():
     for area in areas:
         areas[area] = 0
         
-    fazer_pergunta("Você gosta de Tecnologia?", "Tecnologia", 2)
-    fazer_pergunta("Você gosta de computadores?", "Tecnologia", 3)
-    fazer_pergunta("Você gosta de ajudar as pessoas?", "Saúde", 3)
+    fazer_pergunta("Lida bem com computadores?", "Tecnologia", 3)
+    fazer_pergunta("Está sempre ajudando as pessoas?", "Saúde", 3)
     fazer_pergunta("Você gosta de ler e escrever?", "Humanas", 3)
-    fazer_pergunta("Você gosta de vendas?", "Negócios", 3)
+    fazer_pergunta("Realizar vendas te atrai?", "Negócios", 3)
+    fazer_pergunta("É curioso (a) sobre assuntos de Tecnologia?", "Tecnologia", 3)
+    fazer_pergunta("Gosta de Artes e Design?", "Humanas", 3)
+    fazer_pergunta("Tem curiosidade em aprender sobre doenças?", "Saúde", 3)
+    fazer_pergunta("Em um ambiente competitivo você se sente à vontade?", "Negócios", 3)
+    fazer_pergunta("Se sente confortável quando o assunto é Lógica? ", "Tecnologia", 3)
+    fazer_pergunta("Para você, cortar peles, lidar com sangue e agulhas, tudo bem? ", "Saúde", 3)
+    fazer_pergunta("Você se vê discursando, dando palestras, ou ensinando outras pessoas? ", "Humanas", 3)
+    fazer_pergunta("Taxas, indicadores, índices, gráficos, fazem parte do seu universo? ", "Negócios", 3)
+
 
 def mostrar_resultado():
     print(f"\nPontuação Final:")    
